@@ -8,7 +8,7 @@ Use Left/Right Key to control snake. The snake turn in the direction relative to
 Press ESC in middle of game to quit.
 
 NOTE:
-Ncurses library is needed to run the game.
+Ncurses library is needed for compilation.
 
 Compilation Instruction:
 	To compile:
