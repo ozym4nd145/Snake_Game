@@ -1,0 +1,18 @@
+This game is developed by Suyash Agrawal and is inspired by the popular game called Snakes.
+
+Game Summary - 
+A snake is trapped inside a box and we control the snake to eat food in order to score points. As snake eats food its length increases and the speed of motion increases too. The game ends if snake hits the wall or bites its own body.
+
+Controls -
+Use Left/Right Key to control snake. The snake turn in the direction relative to its motion. Eg- If snake is moving left and we press right key, then it will start moving up (as relative to left, up is right and down is left).
+Press ESC in middle of game to quit.
+
+NOTE:
+Ncurses library is needed to run the game.
+
+Compilation Instruction:
+	To compile:
+	g++ main.cpp snake.cpp unit.cpp collision.cpp food.cpp score.cpp level.cpp -o snake -lncurses 
+
+	To run:
+	./snake to run the game
