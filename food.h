@@ -7,7 +7,8 @@
 #include "Stack.h"
 #include <time.h>
 #include "Score.h"
-extern int delay;
+extern int delay_ver;
+extern int delay_hor;
 //food_check() checks if food has been consumed and if yes then generates new food and also extends the snake accordingly as well as speeds up the game
 void food_check(WINDOW* win,Snake* snake,std::pair<int,int>& coor_food, Score* score); 	
 

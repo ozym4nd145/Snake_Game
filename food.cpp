@@ -50,6 +50,7 @@ void food_check(WINDOW* win,Snake* snake,std::pair<int,int>& coor_food, Score* s
 		snake->grow(1);	//attaches 1 unit to snake
 		food_gen(win,snake,coor_food);	//generates new food
 		score->update();	//updates score
-		delay -= 1000;		//speeds up the game
+		delay_ver -= 1000;		//speeds up the game
+		delay_hor -= 1000;
 	}
 }

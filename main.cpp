@@ -13,13 +13,17 @@
 
 #define HEIGHT 30
 #define WIDTH 80
-#define DELAY 60000
+#define DELAY_VER 60000
+#define DELAY_HOR 47000 
 
-extern int delay;								//Variable used to control speed of game
-int delay = DELAY;
+extern int delay_ver;								//Variable used to control speed of game
+extern int delay_hor;
+int delay_ver = DELAY_VER;
+int delay_hor = DELAY_HOR;
 
 int main(){
 	int ch;										//container for keys pressed
+	Stack* snake_head;
 	std::pair<int,int> coor_food;				//coorinates of the food for snake
 	initscr();
 	noecho();
@@ -80,13 +84,18 @@ int main(){
 			
 			score.print(stdscr);	//Prints the current score on the screen
 			refresh();				//Refreshes the screen to display the changes
-			usleep(delay);			//Introduces a delay so as to control the speed at which the game proceeds
+			snake_head = snake.head();
+
+			//Introduces a delay so as to control the speed at which the game proceeds
+			if(snake_head->elem.gcurrent_dir() % 2 == 1){usleep(delay_ver);}
+			else{usleep(delay_hor);}			
 
 		}
 
 		//When Game gets over, these modify the screen accordingly 
 		snake.kill();						//Deallocates the space occupied by current snake 
-		delay = DELAY;						//resets the delay
+		delay_ver = DELAY_VER;						//resets the delay
+		delay_hor = DELAY_HOR;
 		clear();
 		attron(COLOR_PAIR(6)|A_UNDERLINE|A_BOLD);
 		mvwprintw(stdscr,LINES/2,(COLS-strlen("Your Score -   "))/2,"Your Score - %d",score.get_score());
